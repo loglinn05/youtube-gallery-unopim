@@ -8,11 +8,16 @@
     </h1>
 
     @if (session('errors'))
-        <div class="flex yg-flex-col yg-gap-2 yg-mt-5">
-            @foreach(session('errors')->all() as $error)
-                <p class="yg-font-sans yg-text-base yg-font-bold yg-text-rose-600">{{$error}}</p>
-            @endforeach
-        </div>
+        <script type="module">
+            document.addEventListener('DOMContentLoaded', () => {
+                let errors = {!! Js::from(session('errors')->all()) !!};
+                errors.forEach(error => {
+                    if (window.toast) {
+                        window.toast.error(error);
+                    }
+                });
+            });
+        </script>
     @endif
 
     <div class="flex flex-col">
