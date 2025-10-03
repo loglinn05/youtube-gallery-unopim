@@ -22,5 +22,11 @@ return [
             'build_directory'          => 'themes/installer/default/build',
             'package_assets_directory' => 'src/Resources/assets',
         ],
+
+        'youtube-gallery' => [
+            'hot_file'                 => 'youtube-gallery-vite.hot',
+            'build_directory'          => 'themes/youtube-gallery/build',
+            'package_assets_directory' => 'src/Resources/assets',
+        ],
     ],
 ];

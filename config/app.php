@@ -196,6 +196,7 @@ return [
         Webkul\Theme\Providers\ThemeServiceProvider::class,
         Webkul\User\Providers\UserServiceProvider::class,
         Webkul\ElasticSearch\Providers\ElasticSearchServiceProvider::class,
+        Extra\YouTubeGallery\Providers\YoutubeGalleryServiceProvider::class,
     ])->toArray(),
 
     /*
@@ -210,14 +211,14 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        'Concord'      => Konekt\Concord\Facades\Concord::class,
-        'Core'         => Webkul\Core\Facades\Core::class,
-        'Excel'        => Maatwebsite\Excel\Facades\Excel::class,
-        'Helper'       => Konekt\Concord\Facades\Helper::class,
-        'Image'        => Intervention\Image\Facades\Image::class,
-        'PDF'          => Barryvdh\DomPDF\Facade\Pdf::class,
+        'Concord' => Konekt\Concord\Facades\Concord::class,
+        'Core' => Webkul\Core\Facades\Core::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        'Helper' => Konekt\Concord\Facades\Helper::class,
+        'Image' => Intervention\Image\Facades\Image::class,
+        'PDF' => Barryvdh\DomPDF\Facade\Pdf::class,
         'ProductImage' => Webkul\Product\Facades\ProductImage::class,
         'ProductVideo' => Webkul\Product\Facades\ProductVideo::class,
-        'Redis'        => Illuminate\Support\Facades\Redis::class,
+        'Redis' => Illuminate\Support\Facades\Redis::class,
     ])->toArray(),
 ];
