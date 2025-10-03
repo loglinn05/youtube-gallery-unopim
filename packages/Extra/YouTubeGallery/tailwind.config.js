@@ -4,7 +4,7 @@ module.exports = {
         "./src/Resources/**/*.{php,blade.php,js,vue}",
         "./resources/**/*.{php,blade.php,js,vue}"
     ],
-    darkMode: 'class',
+    darkMode: ['class', '[class~="dark"]'],
     corePlugins: {
         preflight: false
     },

@@ -3,7 +3,7 @@
         {{ __('youtube-gallery::app.youtube-gallery-page.title') }}
     </x-slot:title>
 
-    <h1 class="yg-font-sans yg-text-xl yg-text-gray-800 dark:yg-text-red-500">
+    <h1 class="yg-font-sans yg-text-xl yg-text-gray-800 dark:yg-text-white">
         {{ __('youtube-gallery::app.youtube-gallery-page.title') }}
     </h1>
 
@@ -37,13 +37,15 @@
                       action="{{ route('admin.youtube-gallery.store') }}"
                       method="POST">
                     <my-input name="name"
-                              placeholder="{{ __('youtube-gallery::app.youtube-gallery-page.name-placeholder') }}"></my-input>
+                              placeholder="{{ __('youtube-gallery::app.youtube-gallery-page.name-placeholder') }}"
+                              class="yg-bg-white yg-border-gray-300 text-gray-800 dark:yg-bg-gray-800 dark:yg-border-gray-600 dark:text-gray-300"></my-input>
                     <my-input name="url"
-                              placeholder="URL"></my-input>
+                              placeholder="URL"
+                              class="yg-bg-white yg-border-gray-300 text-gray-800 dark:yg-bg-gray-800 dark:yg-border-gray-600 dark:text-gray-300"></my-input>
                     <my-button
                         type="submit"
                         label="{{__('youtube-gallery::app.youtube-gallery-page.store-button-label')}}"
-                        class="yg-w-fit yg-ml-auto"></my-button>
+                        class="yg-w-fit yg-ml-auto yg-font-sans yg-text-lg yg-font-bold"></my-button>
                     @csrf
                 </form>
             </x-slot>
