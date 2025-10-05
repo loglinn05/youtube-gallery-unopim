@@ -2,7 +2,7 @@
 
 namespace Extra\YouTubeGallery\Http\Controllers;
 
-use Extra\YouTubeGallery\DataGrids\YouTubeVideosDataGrid;
+use Extra\YouTubeGallery\DataGrids\YoutubeVideosDataGrid;
 use Extra\YouTubeGallery\Http\Requests\StoreYouTubeVideoRequest;
 use Extra\YouTubeGallery\Repository\YoutubeVideoRepository;
 use Illuminate\Http\Request;
@@ -26,7 +26,7 @@ class YoutubeVideoController extends Controller
     public function index()
     {
         if (request()->ajax()) {
-            return app(YouTubeVideosDataGrid::class)->toJson();
+            return app(YoutubeVideosDataGrid::class)->toJson();
         }
 
         return view('youtube-gallery::youtube-gallery.index');
