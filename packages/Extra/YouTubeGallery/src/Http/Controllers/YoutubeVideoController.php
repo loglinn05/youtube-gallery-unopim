@@ -5,7 +5,6 @@ namespace Extra\YouTubeGallery\Http\Controllers;
 use Extra\YouTubeGallery\DataGrids\YoutubeVideosDataGrid;
 use Extra\YouTubeGallery\Http\Requests\StoreYouTubeVideoRequest;
 use Extra\YouTubeGallery\Repository\YoutubeVideoRepository;
-use Illuminate\Http\Request;
 
 class YoutubeVideoController extends Controller
 {
@@ -44,7 +43,7 @@ class YoutubeVideoController extends Controller
 
             session()->flash('success', trans('youtube-gallery::app.youtube-gallery-page.video-addition-succeeded-message'));
             return redirect()->back();
-        } catch (\Exception $e) {
+        } catch (\Exception) {
             session()->flash('error', trans('youtube-gallery::app.youtube-gallery-page.video-addition-failed-message'));
             return redirect()->back();
         }
@@ -53,7 +52,7 @@ class YoutubeVideoController extends Controller
     /**
      * Remove a video.
      *
-     * @return \Illuminate\Http\JsonResponse
+     * @return \Illuminate\Http\JsonResponse|void
      */
     public function destroy(int $id)
     {
@@ -65,7 +64,7 @@ class YoutubeVideoController extends Controller
                     'message' => trans('youtube-gallery::app.youtube-gallery-page.video-deletion-succeeded-message'),
                 ], 200);
             }
-        } catch (\Exception $e) {
+        } catch (\Exception) {
             if (request()->wantsJson()) {
                 return response()->json([
                     'message' => trans('youtube-gallery::app.youtube-gallery-page.video-deletion-failed-message'),
